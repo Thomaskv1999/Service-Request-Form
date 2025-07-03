@@ -8,19 +8,42 @@
  "doctype": "Report",
  "filters": [
   {
+   "default": "Installation",
    "fieldname": "request_type",
    "fieldtype": "Select",
    "label": "Request Type",
    "mandatory": 0,
-   "options": "Installation\nMaintenance\nRepair",
+   "options": "Installation\nMaintenance\n",
    "wildcard_filter": 0
   },
   {
+   "default": "High",
    "fieldname": "priority",
    "fieldtype": "Select",
    "label": "Priority",
    "mandatory": 0,
    "options": "Low\nMedium\nHigh",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "created_on",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "created_on",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Data",
+   "label": "Status",
+   "mandatory": 0,
    "wildcard_filter": 0
   }
  ],
@@ -28,13 +51,13 @@
  "is_standard": "Yes",
  "letter_head": "test",
  "letterhead": null,
- "modified": "2025-07-02 15:31:34.280110",
+ "modified": "2025-07-03 11:34:18.537179",
  "modified_by": "Administrator",
  "module": "Servicerequest Thomas2",
  "name": "Service Report",
  "owner": "Administrator",
  "prepared_report": 0,
- "query": "SELECT name as \"Name\", customer as \"CUSTOMER\",request_type as \"REQUEST TYPE\",priority as \"PRIORITY\",total_estimated_hours as \"TOTAL ESTIMATED HOURS\",total_estimated_cost as \"TOTAL ESTIMATED COST\"\n\nFROM `tabService Request Form`",
+ "query": "SELECT name as \"Name\", customer as \"CUSTOMER\",request_type as \"REQUEST TYPE\",priority as \"PRIORITY\",total_estimated_hours as \"TOTAL ESTIMATED HOURS\",total_estimated_cost as \"TOTAL ESTIMATED COST\",\nworkflow_state as \"STATUS\",created_on as \"CREATED ON\" FROM `tabService Request Form`",
  "ref_doctype": "Service Request Form",
  "report_name": "Service Report",
  "report_type": "Query Report",

@@ -52,13 +52,13 @@
    "fieldname": "request_type",
    "fieldtype": "Select",
    "label": "Request Type",
-   "options": "Installation\nMaintenance\nRepair"
+   "options": "\nInstallation\nMaintenance\nRepair"
   },
   {
    "fieldname": "priority",
    "fieldtype": "Select",
    "label": "Priority",
-   "options": "Low\nMedium\nHigh"
+   "options": "\nLow\nMedium\nHigh"
   },
   {
    "fieldname": "description",
@@ -72,6 +72,7 @@
    "read_only": 1
   },
   {
+   "default": "now",
    "fieldname": "created_on",
    "fieldtype": "Read Only",
    "label": "Created On"
@@ -112,7 +113,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-02 14:24:55.184115",
+ "modified": "2025-07-02 18:07:24.542829",
  "modified_by": "Administrator",
  "module": "Servicerequest Thomas2",
  "name": "Service Request Form",

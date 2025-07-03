@@ -32,7 +32,9 @@ function update_totals(frm, cdt, cdn) {
 }
 
 frappe.ui.form.on("Service Request Form", {
-    before_submit(frm) {
+    before_workflow_action:function(frm) {
+        if (frm.selected_workflow_action==='submit'){
+        
         let d = new frappe.ui.Dialog({
             title: 'Confirm Submission',
             fields: [
@@ -74,11 +76,19 @@ frappe.ui.form.on("Service Request Form", {
             ],
             primary_action_label: 'Confirm',
             secondary_action_label: 'Edit',
-      
-            
-        });
+            primary_action(values){
+                d.hide()
+                frm.save("Submit")
+
+            },
+            secondary_action(){
+                d.hide()
+                frappe.msgprint("Submission Cancelled")
+
+            }});
 
         d.show();
-    }
+    }}
 });
+
 
